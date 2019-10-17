@@ -66,7 +66,7 @@ class BraitenbergNode(DTROS):
                     
         rospy.loginfo("Mode: {}".format(self.mode))
 
-        if self.mode not in ["avoid", "follow", "redgreen"]:
+        if self.mode not in ["avoid", "attract", "mixed"]:
             rospy.loginfo("No correct mode is chosen. Mode is set to default (avoid).")
             self.mode = 'avoid'
             rospy.sleep(1)
@@ -114,13 +114,13 @@ class BraitenbergNode(DTROS):
             green = img[:,:,1]
             red = img[:,:,2]
 
-        elif self.mode == "follow":
+        elif self.mode == "attract":
             blue = img[:,:,0]*-1
             green = img[:,:,1]*-1
             red = img[:,:,2]*-1
 
-        elif self.mode == "redgreen":
-            blue = img[:,:,0]*0
+        elif self.mode == "mixed":
+            blue = img[:,:,0]
             green = img[:,:,1]*-1
             red = img[:,:,2] 
 

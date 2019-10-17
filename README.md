@@ -23,3 +23,5 @@ docker -H MY_ROBOT.local run -it -e mode=follow --rm -v /data:/data --net=host d
 ```bash
 docker -H MY_ROBOT.local run -it -e mode=redgreen --rm -v /data:/data --net=host duckietown/rh4:v1-arm32v7
 ```
+### 4. Press ctrl+c to shut down
+Note: If duckiebot does not stop after shutting down (happens approximately 1 out of 20 times), run step 3 and step 4 again.
